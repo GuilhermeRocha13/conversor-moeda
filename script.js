@@ -56,4 +56,39 @@ btnConverter.addEventListener('click',function(){
             console.log(moedaEstrangeira)
         }
     }
+    switch(moedaEstrangeira){
+        case 'Dólar':
+            moedaConvertida = valorEmReal / valorDoDolar
+            mesagemFormatada(moedaConvertida.toLocaleString('en-US', {style:'currency',currency:'USD'}))
+        break;
     
+        case 'Euro':
+            moedaConvertida = valorEmReal / valorDoEuro
+            mesagemFormatada(moedaConvertida.toLocaleString('de-DE', {style:'currency',currency:'EUR'}))
+        break;
+    
+        case 'Libra':
+            moedaConvertida = valorEmReal / valorDaLibra
+            mesagemFormatada(moedaConvertida.toLocaleString('en-GB', {style:'currency',currency:'GBP'}))
+        break;
+    
+        case 'Bitcoin':
+            moedaConvertida = valorEmReal / valorDoBitcoin
+            mesagemFormatada(parseFloat(moedaConvertida).toFixed(5))
+        break;
+    
+        default:
+            aviso.textContent='Escolha uma moeda estrangeira'
+    }
+    isNaN(moedaConvertida) ? moedaConvertida = 0: ''
+})
+
+btnLimpar.addEventListener('click', function(){
+    valorDigitado.focus()
+    valorDigitado.value = ''
+    aviso.textContent= 'Digite o valor, escolha a moeda e converter'
+    moedaSelecionada[0].checked = false
+    moedaSelecionada[1].checked = false
+    moedaSelecionada[2].checked = false
+    moedaSelecionada[3].checked = false
+})
