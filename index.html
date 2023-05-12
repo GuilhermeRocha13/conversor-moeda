@@ -29,7 +29,42 @@
     }
 }
 
+@keyframes aparecer {
+    to {
+        opacity: 0; /* opacidade 0 = 100% transparente */
+    }
+    from {
+        opacity: 1; /* opacidade 1 = 0% transparente */
+    }
+}
 
+.animar {
+    animation: piscar 1s infinite alternate;
+}
+
+.aparecer {
+    animation: aparecer 1.5s ease-in;
+}
+
+</style>
+
+<body class="bg-black">
+
+    <div class="container text-center p-5 w-25 rounded mt-5">
+        <h1 class="text-center text-danger">Conversor de Moedas</h1>
+        <div class="container p-1">
+            <p class="text-danger d-inline">R$</p>
+            <input type="number" name="valoEmReal" id="valorEmReal" class="input d-inline" step="0.01" min="0.00" max="9999999999.99" value="" tabindex="1" onclick="ativarBotao()" onchange="ativarBotao()" autofocus required/>
+        </div>
+        <div class="form-group p-1">
+            <input type="radio" id="dolar" name="moedaEstrangeira" value="Dólar" tabindex="2"/><label for="dolar" class="text-danger m-1"> Dólar</label>
+            <input type="radio" id="euro" name="moedaEstrangeira" value="Euro" tabindex="3"/><label for="euro" class="text-danger m-1"> Euro</label>
+            <input type="radio" id="libra" name="moedaEstrangeira" value="Libra" tabindex="4"/><label for="libra" class="text-danger m-1"> Libra</label>
+            <input type="radio" id="bitcoin" name="moedaEstrangeira" value="Bitcoin" tabindex="5"/><label for="bitcoin" class="text-danger m-1"> Bitcoins</label>
+        </div>
+      
+        </div>
+    </div>
 </body>
 
 </html>
