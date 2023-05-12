@@ -62,7 +62,18 @@
             <input type="radio" id="libra" name="moedaEstrangeira" value="Libra" tabindex="4"/><label for="libra" class="text-danger m-1"> Libra</label>
             <input type="radio" id="bitcoin" name="moedaEstrangeira" value="Bitcoin" tabindex="5"/><label for="bitcoin" class="text-danger m-1"> Bitcoins</label>
         </div>
-      
+        <div class="button-group p-1 m-1">
+            <button  id="btnConverter" class="btn btn-warning dasativado botao" onclick="ativarBotao(); bloquearBotao()" disabled>Converter</button>
+            <button  type="reset" id="btnLimpar" class="btn btn-danger botao" tabindex="7">Limpar</button>
+        </div>
+        <div class="instrucoes p-1 rounded">
+            <p class="centro text-danger" id="aviso">Digite o valor, escolha a moeda e converter</p>
+        </div>
+        <div class="intrucoes">
+            <figure id="imgMoedas" class="centro">
+                <img class="animar" src="imgs/moedas/real.png" alt="Real">
+                <img class="animar" src="imgs/moedas/dolar.png" alt="Moeda">
+            </figure>
         </div>
     </div>
 </body>
